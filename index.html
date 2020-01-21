@@ -1,0 +1,46 @@
+    <?php
+  include "Connection1.php";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h2>List Of Books</h2>
+	<?php
+
+    $res=mysqli_query($db,"SELECT * FROM `book`ORDER BY `book`.`name` ASC;");
+    $row=mysqli_fetch_assoc($res);
+    echo $row['bookid'];
+
+		echo "<table class='table table-bordered table-hover' >";
+			echo "<tr style='background-color: white;'>";
+				echo "<th>"; echo "ID";	echo "</th>";
+				echo "<th>"; echo "Book-Name";  echo "</th>";
+				echo "<th>"; echo "Authors Name";  echo "</th>";
+				echo "<th>"; echo "Edition";  echo "</th>";
+				echo "<th>"; echo "Status";  echo "</th>";
+				echo "<th>"; echo "Quantity";  echo "</th>";
+				echo "<th>"; echo "Department";  echo "</th>";
+			echo "</tr>";	
+
+			while($row=mysqli_fetch_assoc($res))
+			{
+				echo "<tr>";
+				echo "<td>"; echo $row['bookid']; echo "</td>";
+				echo "<td>"; echo $row['ISBN']; echo "</td>";
+				echo "<td>"; echo $row['quantity']; echo "</td>";
+				echo "<td>"; echo $row['name']; echo "</td>";
+				echo "<td>"; echo $row['publisher']; echo "</td>";
+				echo "<td>"; echo $row['sup_id']; echo "</td>";
+				echo "<td>"; echo $row['edition']; echo "</td>";
+
+				echo "</tr>";
+			}
+		echo "</table>"
+;	?>
+</body>
+</html>

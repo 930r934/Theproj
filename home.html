@@ -1,0 +1,51 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+{
+	header('location:login.php');
+}
+?>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container1">
+        <a href="login.html" style="color:white;float: right;padding:20px"> Logout</a>
+        <a href="profile.html" style="color:white;float: right;padding:20px">Profile</a>
+        <a href="feedback.html" style="color:white;float: right;padding:20px">Feedback</a>
+        <div class="row">
+            <div class="col-md-8">
+                <h1 style="color:white;float:right; padding:40px;font-family:'Times New Roman', Times, serif"> Welcome to the Library </h1>
+                <div class="col-md-8 login-left " style="float:right">
+                    <form action="validation1.php" method="post">
+                        <div class="form-group">
+                            <input type="text" name="user" class="form-control" placeholder="search here" required style="padding:20px">
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a1 href="http://marcel-pirnay.be/" class="btn">
+            <svg width="277" height="62">
+                <defs>
+                    <linearGradient id="grad1">
+                        <stop offset="0%" stop-color="#FF8282" />
+                        <stop offset="100%" stop-color="#E178ED" />
+                    </linearGradient>
+                </defs>
+                <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
+            </svg>
+            <!--<span>Voir mes réalisations</span>-->
+            <span>Welcome in my world</span>
+        </a1>
+    </div>
+
+</body>
+</html>
